@@ -26,8 +26,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="about.php"><img src="<?php echo base_url('assets/images/LogoMontfort_small.png')?>" style="margin-top : -17px;"></a>
-                <a class="navbar-brand" href="about.php">The Montfort Brothers of St. Gabriel</a>
+                <a class="navbar-brand" href="<?php echo base_url();?>index.php/Home"><img src="<?php echo base_url();?>assets/images/LogoMontfort_small.png" style="margin-top : -17px;"></a>
+                <a class="navbar-brand" href="<?php echo base_url();?>index.php/Home">The Montfort Brothers of St. Gabriel</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -36,7 +36,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">ข้อมูลส่วนตัว<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="education.php">ประวัติการศึกษา</a>
+                                <a href="<?php echo base_url(); ?>/Home/editprofile">ประวัติการศึกษา</a>
                             </li>
                             <li>
                                 <a href="experience.php">ประวัติการทำงาน</a>
@@ -61,7 +61,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">ยินดีต้อนรับ<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                                 <li>
-                                <a href="edit_profile.php">แก้ไขประวัติส่วนตัว</a>
+                                <a href="<?php echo base_url(); ?>index.php/Home/editprofile">แก้ไขประวัติส่วนตัว</a>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
