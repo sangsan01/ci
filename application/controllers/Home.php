@@ -2,21 +2,13 @@
 class Home extends CI_Controller{
 	function __construct(){
 		parent::__construct();
+		$this->load->model('Brother_model');
 	}
 
 	function index(){
-		$data['content'] = "home";
-		$this->load->model('Brother_model');
+		$data['content'] = "home_view";
 		$data['query'] = $this->Brother_model->getbrother();
-		$this->load->view('template',$data);
+		$this->load->view('guest_template',$data);
 	}
-
-	// function editprofile(){
-	// 	$data['content'] = "editprofile";
-	// 	$this->load->model('Brother_model');
-	// 	$data['query'] = $this->Brother_model->getbrother();
-	// 	$this->load->view('template',$data);
-	// 	$this->load->view('editprofile',$data);
-	// }
 }
 ?>

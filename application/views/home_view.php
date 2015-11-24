@@ -6,13 +6,6 @@
                     <!-- <small>Subheading</small> -->
                 </h1>
                 </div>
-                    
-                
-<!--                 <ol class="breadcrumb">
-                    <li><a href="about.php">Home</a>
-                    </li>
-                    <li class="active">About</li>
-                </ol> -->
             </div>
         </div>
         <!-- /.row -->
