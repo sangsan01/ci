@@ -11,12 +11,12 @@ class Home extends CI_Controller{
 		$this->load->view('template',$data);
 	}
 
-	function editprofile(){
-		$data['content'] = "editprofile";
-		$this->load->model('Brother_model');
-		$data['query'] = $this->Brother_model->getbrother();
-		$this->load->view('template',$data);
-		$this->load->view('editprofile',$data);
-	}
+	// function editprofile(){
+	// 	$data['content'] = "editprofile";
+	// 	$this->load->model('Brother_model');
+	// 	$data['query'] = $this->Brother_model->getbrother();
+	// 	$this->load->view('template',$data);
+	// 	$this->load->view('editprofile',$data);
+	// }
 }
 ?>
