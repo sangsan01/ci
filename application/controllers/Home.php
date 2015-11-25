@@ -6,9 +6,24 @@ class Home extends CI_Controller{
 	}
 
 	function index(){
-		$data['content'] = "home_view";
-		$data['query'] = $this->Brother_model->getbrother();
-		$this->load->view('guest_template',$data);
+		if($this->session->userdata('logged_in'))		//check login role
+   		{
+     		$session_data = $this->session->userdata('logged_in');
+     		$data['username'] = $session_data['username'];
+     		$data['userid'] = $session_data['userid'];
+     
+     		$data['content'] = "home_view";
+     		$data['query'] = $this->Brother_model->getbrother();
+     		$this->load->view('brother_template', $data);
+   		}
+		
+   		else
+   		{
+     	  $data['content'] = "home_view";
+        $data['query'] = $this->Brother_model->getbrother();
+        $this->load->view('guest_template',$data);
+   		}
+		
 	}
 }
 ?>

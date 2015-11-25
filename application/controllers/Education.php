@@ -8,11 +8,7 @@
 		$this->load->model('Education_model');
 		$data['query'] = $this->Education_model->geteducation();
 		$data['content'] = "education";
-		$this->load->view('template',$data);
-
-		
-		
-		
+		$this->load->view('template',$data);		
 		}
 
 		function geteducation(){

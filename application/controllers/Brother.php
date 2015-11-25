@@ -15,6 +15,7 @@ class Brother extends CI_Controller {
    {
      $session_data = $this->session->userdata('logged_in');
      $data['username'] = $session_data['username'];
+     $data['userid'] = $session_data['userid'];
      
      $data['content'] = "home_view";
      $data['query'] = $this->Brother_model->getbrother();
@@ -26,7 +27,14 @@ class Brother extends CI_Controller {
      // redirect('Login', 'refresh');
    }
  }
- 
+  function search(){
+
+    $keyword = $this->input->post('keyword');
+    $data['content'] = "result_view";
+    $data['query'] = $this->Brother_model->search($keyword);
+    $this->load->view('brother_template',$data);
+  }
+
  function logout()
  {
    $this->session->unset_userdata('logged_in');
