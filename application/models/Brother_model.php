@@ -20,5 +20,12 @@
         	// $query = $this->db->get('tablename');
         	return $query->result();
     	}
+
+    	public function getbrotherprofile($id){
+    		$query = $this->db->query("SELECT * FROM member m,File f WHERE m.UserID = $id and m.UserID = f.File_UserID and role = 'brother'");
+
+			return $query->result();
+    	}
+
 	}
 ?>

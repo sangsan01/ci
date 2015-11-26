@@ -23,7 +23,6 @@ class Home extends CI_Controller{
         $data['query'] = $this->Brother_model->getbrother();
         $this->load->view('guest_template',$data);
    		}
-		
 	}
 }
 ?>
