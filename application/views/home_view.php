@@ -45,7 +45,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4">
             <!-- Brother Profile -->
             <div class="thumbnail">
-                <a href="<?php echo base_url();?>index.php/Profile"><img src="<?php echo base_url(); ?>/assets/images/<?php echo $row->FileName?>"></a>
+                <a href="<?php echo base_url();?>index.php/Profile/brotherprofile/<?php echo $row->UserID; ?>"><img src="<?php echo base_url(); ?>/assets/images/<?php echo $row->FileName?>"></a>
                 <div class="caption">
                     <div class="text-center">
                     <h3><?php echo $row->Firstname." ".$row->Lastname; ?></h3>

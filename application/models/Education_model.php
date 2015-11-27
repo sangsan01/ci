@@ -10,5 +10,11 @@
 
 			return $query->result();
 		}
+
+		public function getbrothereducation($id){
+    		$query = $this->db->query("SELECT * FROM education WHERE Edu_UserID = $id");
+
+			return $query->result();
+    	}
 	}
 ?>

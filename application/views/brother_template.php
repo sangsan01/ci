@@ -36,7 +36,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">ข้อมูลส่วนตัว<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="<?php echo base_url(); ?>/Home/editprofile">ประวัติการศึกษา</a>
+                                <a href="<?php echo base_url(); ?>index.php/Education">ประวัติการศึกษา</a>
                             </li>
                             <li>
                                 <a href="experience.php">ประวัติการทำงาน</a>

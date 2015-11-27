@@ -2,18 +2,19 @@
 	class Education extends CI_Controller{
 		function __construct(){
 			parent::__construct();
+			$this->load->model('Education_model');
 		}
 
 		function index(){
-		$this->load->model('Education_model');
+
 		$data['query'] = $this->Education_model->geteducation();
-		$data['content'] = "education";
-		$this->load->view('template',$data);		
+		$data['content'] = "education_view";
+		$this->load->view('brother_template',$data);		
 		}
 
-		function geteducation(){
-			$this->load->view('education',$data);
-		}
+		// function geteducation(){
+		// 	$this->load->view('education_view',$data);
+		// }
 
 	}
 	
