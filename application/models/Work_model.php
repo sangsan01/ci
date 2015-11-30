@@ -16,5 +16,19 @@
 
 			return $query->result();
     	}
+
+    	public function insert($data){
+			$this->db->insert('work', $data);
+    	}
+
+    	public function update($data){
+    		$this->db->where('Work_ID', $this->input->post("id"));
+			$this->db->update('work', $data); 
+    	}
+
+    	public function delete(){
+    		$this->db->where('Work_ID', $this->input->post("id"));
+			$this->db->delete('work');
+    	}
 	}
 ?>

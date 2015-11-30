@@ -22,8 +22,13 @@
     	}
 
     	public function update($data){
-    		$this->db->where('id', $id);
-			$this->db->update('mytable', $object); 
+    		$this->db->where('EducationID', $this->input->post("id"));
+			$this->db->update('education', $data); 
+    	}
+
+    	public function delete(){
+    		$this->db->where('EducationID', $this->input->post("id"));
+			$this->db->delete('education');
     	}
 	}
 ?>

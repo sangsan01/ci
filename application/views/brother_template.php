@@ -39,10 +39,10 @@
                                 <a href="<?php echo base_url(); ?>index.php/Education">ประวัติการศึกษา</a>
                             </li>
                             <li>
-                                <a href="experience.php">ประวัติการทำงาน</a>
+                                <a href="<?php echo base_url(); ?>index.php/Experience">ประวัติการทำงาน</a>
                             </li>
                             <li>
-                                <a href="work.php">ผลงาน</a>
+                                <a href="<?php echo base_url(); ?>index.php/Work">ผลงาน</a>
                             </li>
                         </ul>
                     </li>

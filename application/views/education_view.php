@@ -1,6 +1,3 @@
-<?php
-	$i=1;
-?>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="margin-top: 100px; margin-bottom:20px;">
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>เพิ่มข้อมูล
     </button>
@@ -43,30 +40,34 @@
       </div>
     </div>
 
+<div id="result">
+  <?php
+    $i=1;
+  ?>
 <div class="table-responsive">
 <table class="table table-bordered table-hover">
-	<thead>
-	  <tr>
-	    <th>ลำดับที่</th>
-	    <th>เริ่ม พ.ศ.</th>
-	    <th>สิ้นสุด พ.ศ.</th>
+  <thead>
+    <tr>
+      <th>ลำดับที่</th>
+      <th>เริ่ม พ.ศ.</th>
+      <th>สิ้นสุด พ.ศ.</th>
       <th>ระดับการศึกษา</th>
-	    <th>รายละเอียด</th>
+      <th>รายละเอียด</th>
       <th>action</th>
-	  </tr>
-	</thead>
-	<tbody>
+    </tr>
+  </thead>
+  <tbody>
 
 <?php foreach ($query as $row){ ?>
     
-	  <tr>
-	    <td><?php echo $i; ?></td>
+    <tr>
+      <td><?php echo $i; ?></td>
       <?php $i++; ?>
-	    <td><?php echo $row->Start; ?></td>
-	    <td><?php echo $row->End; ?></td>
+      <td><?php echo $row->Start; ?></td>
+      <td><?php echo $row->End; ?></td>
       <td><?php echo $row->Degree; ?></td>
-	    <td><?php echo $row->Detail; ?></td>
-	    <td>
+      <td><?php echo $row->Detail; ?></td>
+      <td>
       <a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal<?php echo $row->EducationID; ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true">แก้ไข</span></a>
       <a class="btn btn-danger btn-sm " onclick="deletedata('<?php echo $row->EducationID; ?>')" ><span class="glyphicon glyphicon-trash" aria-hidden="true">ลบ</span></a>
 
@@ -110,81 +111,75 @@
   </div>
 </div>
 </form>
-	    </td>
-	  </tr>
-	  <?php } ?>
-	</tbody>
+      </td>
+    </tr>
+    <?php } ?>
+  </tbody>
       </table>
+</div>
 </div>
 
 <script type="text/javascript">
-
-    // function viewdata(){
-    //   $.ajax({
-    //     type: "GET",
-    //     url: "getEducation.php"
-    //   }).done(function( data ) {
-    //     $('#viewdata').html(data);
-    //   });
-    // }
     
-    $('#save').click(function(){
-      
-      var start = $('#start').val();
-      var end = $('#end').val();
-      var degree = $('#degree').val();
-      var detail = $('#detail').val();
+  $('#save').click(function(){  
+    var start = $('#start').val();
+    var end = $('#end').val();
+    var degree = $('#degree').val();
+    var detail = $('#detail').val();
 
-      console.log(start);
-      console.log(end);
-      console.log(degree);
-      console.log(detail);
-      
-      $.ajax({
-        type: "POST",
-        url: "<?php echo base_url();?>"+"index.php/Education/insert",
-        data: {start:start,end:end,degree:degree,detail:detail},
-        success: function(data) {
-          // $('#info').html(data);
-          $('#myModal').modal('hide');
-          // viewdata();
-        },
-        error: function(data){
-            alert("Ajax fail");
-        }
-      });
+    $.ajax({
+      type: "POST",
+      url: "<?php echo base_url();?>"+"index.php/Education/insert",
+      data: {start:start,end:end,degree:degree,detail:detail},
+      success: function(data) {
+        $('#result').html(data);
+        $('#myModal').modal('hide');
+
+        // viewdata();
+      },
+      error: function(data){
+        alert("Ajax fail");
+      }
     });
+  });
       
+  function updatedata(str){
+    var id = str;
+    var start = $('#start'+str).val();
+    var end = $('#end'+str).val();
+    var degree = $('#degree'+str).val();
+    var detail = $('#detail'+str).val();
+      
+    $.ajax({
+      type: "POST",
+      url: "<?php echo base_url();?>"+"index.php/Education/update",
+      data: {id:id,start:start,end:end,degree:degree,detail:detail},
+      success:function(data) {
+        $('#result').html(data);
+        $("html,body").css("overflow","auto");
+      },
+      error: function (data){
 
-    function updatedata(str){
-  
-      var id = str;
-      var start = $('#start'+str).val();
-      var end = $('#end'+str).val();
-      var degree = $('#degree'+str).val();
-      var detail = $('#detail'+str).val();
+      }
+    });
+  };
+    
+  function deletedata(str){
+    var id = str;
       
-  $.ajax({
-     type: "POST",
-    url: "<?php echo base_url();?>"+"index.php/Education/update",
-     data: {start:start,end:end,degree:degree,detail:detail},
-  }).done(function( data ) {
-    // $('#info').html(data);
-    $("html,body").css("overflow","auto");
-    viewdata();
-  });
-    }
-    function deletedata(str){
-  
-  var id = str;
-      
-  $.ajax({
-     type: "GET",
-     url: "deleteEducation.php?id="+id
-  }).done(function( data ) {
-    $('#info').html(data);
-    viewdata();
-  });
-    }
-    </script>
+    $.ajax({
+      type: "POST",
+      url: "<?php echo base_url();?>"+"index.php/Education/delete",
+      data: {id:id},
+      success:function(data) {
+        $('#result').html(data);
+        $("html,body").css("overflow","auto");
+      },
+      error: function (data){
+
+      }
+    });
+  };
+
+</script>
 

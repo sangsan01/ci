@@ -6,11 +6,14 @@
 		}
 
 		function index(){
-
-		$data['query'] = $this->Education_model->geteducation();
-		$data['content'] = "education_view";
-		$this->load->view('brother_template',$data);		
+			$data['query'] = $this->Education_model->geteducation();
+			$data['content'] = "education_view";
+			$this->load->view('brother_template',$data);		
 		}
+		// function view(){
+		// 	$data['query'] = $this->Education_model->geteducation();
+		// 	$this->load->view('educationdata_view');		
+		// }
 
 		function insert(){
 			$session_data = $this->session->userdata('logged_in');
@@ -22,6 +25,9 @@
    				'Edu_UserID' => $session_data['userid']
 			);
 			$this->Education_model->insert($data);
+			
+			$data['query'] = $this->Education_model->geteducation();
+			$this->load->view('educationdata_view',$data);
 		}
 
 		function update(){
@@ -33,12 +39,18 @@
    				'Detail' => $this->input->post("detail"),
    				'Edu_UserID' => $session_data['userid']
 			);
-			$this->Education_model->iupdate($data);
+			$this->Education_model->update($data);
+
+			$data['query'] = $this->Education_model->geteducation();
+			$this->load->view('educationdata_view',$data);
 		}
 
-		// function geteducation(){
-		// 	$this->load->view('education_view',$data);
-		// }
+		function delete(){
+			$this->Education_model->delete();
+
+			$data['query'] = $this->Education_model->geteducation();
+			$this->load->view('educationdata_view',$data);
+		}
 
 	}
 	
