@@ -119,34 +119,42 @@
 
 <script type="text/javascript">
 
-    function viewdata(){
-      $.ajax({
-        type: "GET",
-        url: "getEducation.php"
-      }).done(function( data ) {
-        $('#viewdata').html(data);
-      });
-    }
+    // function viewdata(){
+    //   $.ajax({
+    //     type: "GET",
+    //     url: "getEducation.php"
+    //   }).done(function( data ) {
+    //     $('#viewdata').html(data);
+    //   });
+    // }
     
     $('#save').click(function(){
-  
+      
       var start = $('#start').val();
       var end = $('#end').val();
       var degree = $('#degree').val();
       var detail = $('#detail').val();
 
-      var datas={start:start,end:end,degree:degree,detail:detail};
+      console.log(start);
+      console.log(end);
+      console.log(degree);
+      console.log(detail);
       
       $.ajax({
         type: "POST",
-        url: "newEducation.php",
-        data: datas
-      }).done(function( data ) {
-        $('#info').html(data);
-        $('#myModal').modal('hide');
-        viewdata();
+        url: "<?php echo base_url();?>"+"index.php/Education/insert",
+        data: {start:start,end:end,degree:degree,detail:detail},
+        success: function(data) {
+          // $('#info').html(data);
+          $('#myModal').modal('hide');
+          // viewdata();
+        },
+        error: function(data){
+            alert("Ajax fail");
+        }
       });
     });
+      
 
     function updatedata(str){
   
@@ -155,15 +163,13 @@
       var end = $('#end'+str).val();
       var degree = $('#degree'+str).val();
       var detail = $('#detail'+str).val();
-  
-      var datas="start="+start+"&end="+end+"&degree="+degree+"&detail="+detail;
       
   $.ajax({
      type: "POST",
-     url: "updateEducation.php?id="+id,
-     data: datas
+    url: "<?php echo base_url();?>"+"index.php/Education/update",
+     data: {start:start,end:end,degree:degree,detail:detail},
   }).done(function( data ) {
-    $('#info').html(data);
+    // $('#info').html(data);
     $("html,body").css("overflow","auto");
     viewdata();
   });

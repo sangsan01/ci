@@ -16,5 +16,14 @@
 
 			return $query->result();
     	}
+
+    	public function insert($data){
+			$this->db->insert('education', $data);
+    	}
+
+    	public function update($data){
+    		$this->db->where('id', $id);
+			$this->db->update('mytable', $object); 
+    	}
 	}
 ?>
