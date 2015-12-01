@@ -61,7 +61,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">ยินดีต้อนรับ<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                                 <li>
-                                <a href="<?php echo base_url(); ?>index.php/Home/editprofile">แก้ไขประวัติส่วนตัว</a>
+                                <a href="<?php echo base_url(); ?>index.php/Editprofile">แก้ไขประวัติส่วนตัว</a>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
