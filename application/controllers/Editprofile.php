@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	class Editprofile extends CI_Controller{
 		function __construct(){
 			parent::__construct();
@@ -12,7 +12,7 @@
 
 			$data['content'] = "editprofile_view";
 			$data['query'] = $this->Brother_model->getbrotherprofile($session_data['userid']);
-			$this->load->view('brother_template',$data);
+			$this->load->view('template/brother_header',$data);
 
 		}
 

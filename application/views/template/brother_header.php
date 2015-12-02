@@ -10,9 +10,13 @@
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/bootstrapValidator.min.js"></script>
 
     <link href="<?php echo base_url(); ?>assets/css/navbar-custom.css" rel="stylesheet">
-    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css" rel="stylesheet" >
+    <link href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css" rel="stylesheet">
+
 	<title>Home</title>
 </head>
 <body>
@@ -58,7 +62,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ยินดีต้อนรับ<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ประวัติส่วนตัว<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                                 <li>
                                 <a href="<?php echo base_url(); ?>index.php/Editprofile">แก้ไขประวัติส่วนตัว</a>

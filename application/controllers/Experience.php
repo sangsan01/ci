@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	class Experience extends CI_Controller{
 		function __construct(){
 			parent::__construct();
@@ -8,7 +8,7 @@
 		function index(){
 			$data['query'] = $this->Experience_model->getexperience();
 			$data['content'] = "experience_view";
-			$this->load->view('brother_template',$data);		
+			$this->load->view('template/brother_header',$data);		
 		}
 		// function view(){
 		// 	$data['query'] = $this->Experience_model->getExperience();

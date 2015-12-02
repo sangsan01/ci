@@ -156,6 +156,7 @@
       data: {id:id,start:start,end:end,degree:degree,detail:detail},
       success:function(data) {
         $('#result').html(data);
+        $('#myModal').modal('hide');
         $("html,body").css("overflow","auto");
       },
       error: function (data){

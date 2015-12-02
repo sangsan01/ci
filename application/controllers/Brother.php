@@ -19,7 +19,7 @@ class Brother extends CI_Controller {
      
      $data['content'] = "home_view";
      $data['query'] = $this->Brother_model->getbrother();
-     $this->load->view('brother_template', $data);
+     $this->load->view('template/brother_header', $data);
    }
    else
    {
@@ -32,7 +32,7 @@ class Brother extends CI_Controller {
     $keyword = $this->input->post('keyword');
     $data['content'] = "result_view";
     $data['query'] = $this->Brother_model->search($keyword);
-    $this->load->view('brother_template',$data);
+    $this->load->view('template/brother_header',$data);
   }
 
  function logout()

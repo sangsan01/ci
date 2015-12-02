@@ -29,7 +29,7 @@ class Profile extends CI_Controller {
         $data['queryexperience'] = $this->Experience_model->getbrotherexperience($id);
         $data['querywork'] = $this->Work_model->getbrotherwork($id);
 
-        $this->load->view('brother_template', $data);
+        $this->load->view('template/brother_header', $data);
       }
     
     else
@@ -40,7 +40,7 @@ class Profile extends CI_Controller {
         $data['queryexperience'] = $this->Experience_model->getbrotherexperience($id);
         $data['querywork'] = $this->Work_model->getbrotherwork($id);
 
-        $this->load->view('guest_template',$data);
+        $this->load->view('template/guest_header',$data);
         
       }
   }

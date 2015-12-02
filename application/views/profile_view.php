@@ -7,9 +7,9 @@
                         <div class="box-content"> -->
 
                           <?php foreach($queryprofile as $row){ ?>
-                          <div class="panel panel-primary text-center" >
-                            <div class="panel-heading">
-                                <h2 class="tag-title">ประวัติส่วนตัว</h2>
+                          <div class="panel panel-default text-center" >
+                            <div class="panel-heading" style="background-color:#337ab7;color:white;">
+                                <h2 class="tag-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> ประวัติส่วนตัว</h2>
                             </div>
                             <div class="panel-body">
                                 <p><center><img src="<?php echo base_url(); ?>/assets/images/<?php echo $row->FileName?>" class="img-rounded img-responsive" align="middle" style="width: 250px;
@@ -34,9 +34,9 @@
                     <!-- <div class="box">
                         <div class="box-content"> -->
                             <div class="panel panel-default text-center">
-                            <div class="panel-heading"  style="background-color:#FF0000 ; color:white;">
+                            <div class="panel-heading"  style="background-color:#5cb85c ; color:white;">
                                 
-                                <h2 class="tag-title">ประวัติการศึกษา</h2>
+                                <h2 class="tag-title"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> ประวัติการศึกษา</h2>
 
                             </div>
                             
@@ -49,8 +49,8 @@
                 </div>
                 <div class="col-md-12">
                     <div class="panel panel-default text-center">
-                        <div class="panel-heading" style="background-color:#339933 ; color:white;">
-                            <h2 class="tag-title">ประวัติการทำงาน</h2>
+                        <div class="panel-heading" style="background-color:#f0ad4e ; color:white;">
+                            <h2 class="tag-title"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> ประวัติการทำงาน</h2>
                         </div>
                         <div class="panel-body">
                         
@@ -72,8 +72,8 @@
                     <!-- <div class="box">
                         <div class="box-content"> -->
                             <div class="panel panel-default text-center">
-                            <div class="panel-heading" style="background-color:#FF9900 ; color:white;">
-                                <h2 class="tag-title">ผลงานแห่งความภาคภูมิใจ</h2>
+                            <div class="panel-heading" style="background-color:#d9534f ; color:white;">
+                                <h2 class="tag-title"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> ผลงานแห่งความภาคภูมิใจ</h2>
                             </div>
                             
                             <div class="panel-body">
