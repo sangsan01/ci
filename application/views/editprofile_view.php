@@ -119,8 +119,8 @@ foreach($query as $row){
             </div>
             <div class="col-md-9">
               <div class="fileinput fileinput-new" data-provides="fileinput">
-                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 150px;">
-                  <img src="images/<?php echo $row->FileName;?>" alt="">
+                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 250px;">
+                  <img src="<?php echo base_url(); ?>/assets/images/<?php echo $row->FileName ?>">
                 </div>
                 <div>
                   <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="fileUpload"></span>
